@@ -3,6 +3,10 @@
   <% @articles.each do |article| %>
     <li>
       <%= link_to article.title, article_path(article.id) %>
+      <%= link_to "edit", edit_article_path(article.id)%>
+      <%= link_to "Destroy", article_path(article.id),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
     </li>
   <% end %>
 </ul>
